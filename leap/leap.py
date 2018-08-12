@@ -1,5 +1,6 @@
 def is_leap_year(year):
-    if ((year/4) == 0):
-        return True
-    else:
+    remainder4 = year%4
+    remainder100 = year%100
+    if remainder4 != 0: #and remainder100 !=0:
         return False
+    
