@@ -16,7 +16,7 @@ def hey(phrase):
         return ("Calm down, I know what I'm doing!") 
     
     #this runs the hey method to check if phrase does not match any of the stated conditions
-    elif space_check(clean_string) == True: 
+    elif clean_string == "": 
         return ("Fine. Be that way!")   
 
     else: 
@@ -28,12 +28,6 @@ def up_check(phrase):
         return True
     return False  
 
-def space_check(phrase):
-    #if statement to check whether the phrase contains nothing but whitespace and returns
-    #true if there is
-    if phrase.isspace():
-        return True
-    return False 
        
             
    #def up_check_loop(phrase):
