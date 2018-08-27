@@ -3,16 +3,17 @@ def hey(phrase):
     clean_string = phrase.strip()
 
     #this runs the hey method to check if the phrase argument ends with a question mark
-    if clean_string.endswith("?"):
+    if clean_string.endswith("?") and all_upcheck(clean_string) == False:
         return ("Sure.")
     
     #this runs the hey method to check if the phrase argument ends with an exclamation mark
-    elif clean_string.endswith("!") or up_check(clean_string) == True: 
+    #and is ALL  upper case
+    elif all_upcheck(clean_string) == True and clean_string.endswith("?") == False: 
         return ("Whoa, chill out!") 
     
-    #this runs the hey method to check if the phrase argument ends with an exclamation mark
+    #this runs the hey method to check if the phrase argument ends with a question mark
     # and is in uppercase
-    elif clean_string.endswith("!") and up_check(clean_string) == True: 
+    elif clean_string.endswith("?") and all_upcheck(clean_string) == True: 
         return ("Calm down, I know what I'm doing!") 
     
     #this runs the hey method to check if phrase does not match any of the stated conditions
@@ -22,17 +23,16 @@ def hey(phrase):
     else: 
         return ("Whatever.")
     
-def up_check(phrase):
-    #if statement to check whether the phrase is uppercase
+def all_upcheck(phrase):
+    #if statement to check whether the phrase is uppercase and returns true if it is
     if phrase.isupper():
         return True
     return False  
 
-       
-            
-   #def up_check_loop(phrase):
-    #for loop to check if each char in phrase is uppercase; duplicative but good for 
-    #learning how to do a for loop
-    #for phrase:
-        #return True
-    #return False         
+def one_upcheck(phrase):
+     #for loop to check if each char in phrase is lowercase and return false if there is 
+    for x in phrase:
+        if x.islower():
+            return False
+        return True   
+        
