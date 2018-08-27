@@ -8,7 +8,7 @@ def hey(phrase):
     
     #this runs the hey method to check if the phrase argument ends with an exclamation mark
     #and is ALL  upper case
-    elif all_upcheck(clean_string) == True and clean_string.endswith("?") == False: 
+    elif all_upcheck(clean_string) == True and not clean_string.endswith("?"): 
         return ("Whoa, chill out!") 
     
     #this runs the hey method to check if the phrase argument ends with a question mark
